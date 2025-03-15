@@ -4,7 +4,7 @@ Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de 
 
 ## Material de apoyo:
 
-* <a href="https://dietrichson.github.io/metodos_cuantitativos_2/index.html" target="_new">Métodos cuantitativos"</a>
+* <a href="https://dietrichson.github.io/metodos_cuantitativos_2/index.html" target="_blank">Métodos cuantitativos</a>
 
 ## Antes de empezar
 
