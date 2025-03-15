@@ -3,7 +3,7 @@
 Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de ciencia de datos, 2025. UNSAM.
 
 ## Material de apoyo:
-
+* [Métodos cuantitativos](https://dietrichson.github.io/metodos_cuantitativos_2/index.html){:target="_blank"}
 * <a href="https://dietrichson.github.io/metodos_cuantitativos_2/index.html" target="_blank">Métodos cuantitativos</a>
 
 ## Antes de empezar
