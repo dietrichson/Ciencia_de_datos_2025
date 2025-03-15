@@ -12,15 +12,9 @@ Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de 
 2.  Abrir una cuenta en posit.cloud (<https://posit.cloud/>)
 3.  Associar la cuenta de github con la de posit
 4.  Hacer «clone» de este repository en una instancia Rstudio de posit.cloud.
+5.  Enviarme por mail su **usuario de github**. (Luego van a recibir una invitación de colaborar).
 
 ### Recommendaciones específicas de github
 
 -   Crear un Personal Access Token (PAT) y guardarlo.
--   Ponerle una fecha de expiración que coincida con el fin del semestre.
-
-## Para verificar que está todo conectado
-
--   Crear una folder en su repositorio con su nombre de pila
--   Crear un documento .qmd dentro de la carpeta
--   Realizar un «commit» y un «push»
--   Luego, desde la interface de github realizar un «pull request»
+-   Ponerle una fecha de expiración que coincida con el fin del semestre.s
