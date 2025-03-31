@@ -9,6 +9,6 @@ editor: visual
 
 Soy dalia ivanoff! Soy comunicadora y hago videojuegos y juegos de mesa.
 
-## Lo que busco con este seminario 
+## Lo que busco con este seminario
 
 Aprender un lenguaje nuevo
