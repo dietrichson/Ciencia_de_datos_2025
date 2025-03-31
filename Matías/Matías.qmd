@@ -6,4 +6,4 @@ editor: visual
 
 ## Presentación Personal
 
-Mi nombre es Matías, soy locutor y estoy cursando esta materia a fin de aprender un poco más del mundo de la Ciencia de Datos. Todo el uso de este tipo de herramientas es nuevo para mí y me intriga. Me gustaría aprender a utilizar SQL o herramientas que me acerquen a ese lenguaje.
+Mi nombre es Matías, tengo 25 años. Me recibí como locutor y estoy cursando la Licenciatura en Comunicación Audiovisual desde el año pasado. En particular, a esta materia me anoté a fin de aprender de qué se trata la Ciencia de Datos. Todo el uso de este tipo de herramientas es nuevo para mí y me intriga. Me gustaría aprender a utilizar SQL o herramientas que me acerquen a ese lenguaje.
