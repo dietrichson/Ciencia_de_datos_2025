@@ -5,6 +5,8 @@ Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de 
 ## Material de apoyo:
 * <a href="https://dietrichson.github.io/metodos_cuantitativos_2/index.html">Métodos cuantitativos</a>
 
+* <a href="https://dietrichson.github.io/Ciencia_de_datos_2025/presentaciones/1-inicio-y-setup.html">Presentación de la clase 1</a>
+
 ## Antes de empezar
 
 1.  Abrir una cuenta en github (<https://github.com/>)
