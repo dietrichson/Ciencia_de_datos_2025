@@ -30,7 +30,7 @@ editor: visual
 
 -   Cada estudiante tendrá su instancia de github y su instancia de posit.cloud
 
--   Las tareas, ejercicios y demás entregables se realizarán por medio de un «pull request» al resositorio de la clase.
+-   Las tareas, ejercicios y demás entregables se realizarán por medio de un «pull request» al repositorio de la clase.
 
 ## Agenda para hoy
 
