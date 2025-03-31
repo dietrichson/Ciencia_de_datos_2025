@@ -1,0 +1,16 @@
+---
+title: "Presentacion"
+author: "Dalia Ivanoff"
+format: html
+editor: visual
+---
+
+## Presentación
+
+Soy Dalia Ivanoff. Soy comunicadora y hago videojuegos y juegos de mesa.
+
+## Datos que me gustaría analizar
+
+Entender un lenguaje nuevo
+
+## 
