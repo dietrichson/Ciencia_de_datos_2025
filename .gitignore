@@ -28,9 +28,10 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 # pkgdown site
-docs/
+
 # translation temp files
 po/*~
 # RStudio Connect folder
 rsconnect/
 project.Rproj
+Ciencia_de_datos_2025.Rproj
