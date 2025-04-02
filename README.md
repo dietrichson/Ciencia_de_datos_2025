@@ -11,7 +11,7 @@ Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de 
 
 1.  Abrir una cuenta en github (<https://github.com/>)
 2.  Abrir una cuenta en posit.cloud (<https://posit.cloud/>)
-3.  Associar la cuenta de github con la de posit
+3.  Asociar la cuenta de github con la de posit
 4.  Hacer «clone» de este repository en una instancia Rstudio de posit.cloud.
 5.  Enviarme por mail su **usuario de github**. (Luego van a recibir una invitación de colaborar).
 
