@@ -5,11 +5,13 @@ format: html
 editor: visual
 ---
 
-# Presentacion
+## Presentación
 
-Soy dalia ivanoff! Soy comunicadora y hago videojuegos y juegos de mesa.
-Soy dalia ivanoff! Soy comunicadora, hago videojuegos y juegos de mesa.
+Soy Dalia Ivanoff. Soy comunicadora y hago videojuegos y juegos de mesa.
 
-## Lo que busco con este seminario
+## Datos que me gustaría analizar
 
-Aprender un lenguaje nuevo
+Entender un lenguaje nuevo
+
+## 
+
