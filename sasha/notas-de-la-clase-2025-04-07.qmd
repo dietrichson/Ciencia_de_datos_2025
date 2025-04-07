@@ -42,3 +42,11 @@ venn <- my_data |>
 venn_orig <- venn # Cache for later use
 venn
 ```
+
+## Tarea para la próxima
+
+1.  Eligir una variable de los datos del indec
+
+2.  Detereminar nivel de medición, y precisión
+
+3.  Intentar un análisis descriptivo\

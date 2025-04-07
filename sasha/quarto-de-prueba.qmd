@@ -1,0 +1,15 @@
+---
+title: "Documento de Prueba"
+format: html
+editor: visual
+---
+
+## Análisis de prueba
+
+```{r}
+# Script de Prueba
+edad <- c(23, 24, 25, 39, 21)
+print(mean(edad))
+```
+
+Descubrimos que la edad promedio era de 26,4 en el grupo.
