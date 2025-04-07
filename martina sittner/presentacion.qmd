@@ -1,0 +1,12 @@
+---
+title: "presentacion"
+author: "martinasittner"
+format: html
+editor: visual
+---
+
+## Presentacion personal:
+
+Mi nombre es Martina. Soy periodista y estudiante en Unsam de la carrera Lic. en comunicacion audiovisual.
+
+Intereses; en este seminario me interesaria analizar datos de tendencias de consumo en el mundo, datos del tipo socioeconomico, datos y cifras sobre el cambio climatico/ambiental, analisis de datos sobre uso y desuso de redes sociales e IA.
