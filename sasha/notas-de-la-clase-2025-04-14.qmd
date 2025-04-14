@@ -1,0 +1,54 @@
+---
+title: "Notas de la clase 2025-04-14"
+author: "Aleksander Dietrichson"
+format: html
+editor: visual
+---
+
+## Datos
+
+```{r}
+#| include: false
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+```
+
+```{r}
+library(dplyr)
+my_data <- datos_crudos |>  
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer"))
+```
+
+## El uso de pipe
+
+Es el simbolo \|\>
+
+barplot(table(my_data))
+
+my_data \|\>
+
+table() \|\>
+
+barplot()
+
+```{r}
+my_data |>
+  group_by(sexo) |>
+  summarize(
+    Salario_promedio = mean(salario, na.rm = TRUE)
+  )
+```
+
+## Visuaizaciones
+
+```{r}
+
+```
