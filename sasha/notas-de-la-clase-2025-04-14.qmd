@@ -1,6 +1,7 @@
 ---
 title: "Notas de la clase 2025-04-14"
 author: "Aleksander Dietrichson"
+date: 2025-04-14
 format: html
 editor: visual
 ---
