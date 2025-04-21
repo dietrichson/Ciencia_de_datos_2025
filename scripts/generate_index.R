@@ -38,23 +38,33 @@ extract_metadata <- function(file_path) {
 
 # Copy files from sasha to docs
 copy_notes_to_docs <- function(note_files) {
-  for (file in note_files) {
-    # Create target path in docs directory
-    target_path <- file.path("docs", basename(file))
+  for (qmd_file in note_files) {
+    # Get both qmd and html files
+    base_name <- tools::file_path_sans_ext(basename(qmd_file))
 
-    # Copy the file
-    file.copy(file, target_path, overwrite = TRUE)
+    # Copy QMD file
+    qmd_target <- file.path("docs", basename(qmd_file))
+    file.copy(qmd_file, qmd_target, overwrite = TRUE)
 
-    # If there's an associated files directory, copy it too
-    files_dir <- gsub("\\.qmd$", "_files", file)
-    if (dir.exists(files_dir)) {
-      target_files_dir <- file.path("docs", basename(files_dir))
+    # Copy HTML file if it exists
+    html_source <- file.path(dirname(qmd_file), paste0(base_name, ".html"))
+    if (file.exists(html_source)) {
+      html_target <- file.path("docs", paste0(base_name, ".html"))
+      file.copy(html_source, html_target, overwrite = TRUE)
+    }
+
+    # Handle associated files directory
+    files_dir <- paste0(base_name, "_files")
+    source_files_dir <- file.path(dirname(qmd_file), files_dir)
+
+    if (dir.exists(source_files_dir)) {
+      target_files_dir <- file.path("docs", files_dir)
       if (dir.exists(target_files_dir)) {
         unlink(target_files_dir, recursive = TRUE)
       }
       dir.create(target_files_dir, recursive = TRUE)
       file.copy(
-        list.files(files_dir, full.names = TRUE),
+        list.files(source_files_dir, full.names = TRUE),
         target_files_dir,
         recursive = TRUE
       )
