@@ -20,6 +20,7 @@ format:
 
 ### Clase 3: Revisión de la teoría
 * [Revisión de la teoría](presentaciones/3-centralizacion-y-dispersión.html)
+* [Notas de la clase 2025-04-14](notas-de-la-clase-2025-04-14.html)
 
 ### Clase 4: Método científico. Manipulación de datos.
 * [Método científico. Manipulación de datos.](presentaciones/4-metodo-científico.html)
