@@ -1,0 +1,10 @@
+---
+title: "Suma"
+author: "Julián CC"
+format: revealjs
+editor: visual
+---
+
+```{r}
+1500 + 200
+```
