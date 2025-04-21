@@ -1,6 +1,7 @@
 ---
 title: "Arranque"
 author: "Aleksander Dietrichson, PhD"
+date: 2025-03-31
 format:
   revealjs: 
     theme: dark
