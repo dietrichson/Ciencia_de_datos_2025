@@ -1,5 +1,6 @@
 library(tidyverse)
 library(yaml)
+library(quarto)
 
 # Function to extract metadata from qmd files
 extract_metadata <- function(file_path) {
@@ -86,7 +87,7 @@ copy_notes_to_docs <- function(note_files) {
   }
 }
 
-# Generate index.md
+# Generate index.qmd
 generate_index <- function() {
   # Find all presentation and note files
   pres_files <- list.files("docs/presentaciones",
@@ -107,7 +108,14 @@ generate_index <- function() {
 
   # Create index content
   index_content <- c(
-    "# Seminario de Ciencia de Datos\n",
+    "---",
+    "title: \"Seminario de Ciencia de Datos\"",
+    "format:",
+    "  html:",
+    "    theme: darkly",
+    "    css: styles.css",
+    "---",
+    "",
     "## Presentaciones y Notas\n"
   )
 
@@ -148,8 +156,11 @@ generate_index <- function() {
     }
   }
 
-  # Write index.md file
-  writeLines(index_content, "docs/index.md")
+  # Write index.qmd file
+  writeLines(index_content, "docs/index.qmd")
+
+  # Render using quarto package
+  quarto_render("docs/index.qmd")
 }
 
 # Run the generator
