@@ -4,16 +4,16 @@
 
 
 ### Clase 1: Arranque
-* [Presentación](presentaciones/1-inicio-y-setup.html)
-* [Notas](presentacion.html)
+* [Arranque](presentaciones/1-inicio-y-setup.html)
+* [Presentación Aleksander Dietrichson](presentacion.html)
 
 ### Clase 2: Admin y R
-* [Presentación](presentaciones/2-sincronizar-repositorios-primer-codigo-y-analysis.html)
-* [Notas](notas-de-la-clase-2025-04-07.html)
-* [Notas](Primer-analysis.html)
+* [Admin y R](presentaciones/2-sincronizar-repositorios-primer-codigo-y-analysis.html)
+* [Presentación](notas-de-la-clase-2025-04-07.html)
+* [Primer análisis Indec](Primer-analysis.html)
 
 ### Clase 3: Revisión de la teoría
-* [Presentación](presentaciones/3-centralizacion-y-dispersión.html)
+* [Revisión de la teoría](presentaciones/3-centralizacion-y-dispersión.html)
 
 ### Clase 4: Método científico. Manipulación de datos.
-* [Presentación](presentaciones/4-metodo-científico.html)
+* [Método científico. Manipulación de datos.](presentaciones/4-metodo-científico.html)

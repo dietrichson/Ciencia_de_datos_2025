@@ -38,6 +38,8 @@ extract_metadata <- function(file_path) {
 
 # Copy files from sasha to docs
 copy_notes_to_docs <- function(note_files) {
+  missing_html <- character(0)
+
   for (qmd_file in note_files) {
     # Get both qmd and html files
     base_name <- tools::file_path_sans_ext(basename(qmd_file))
@@ -46,11 +48,13 @@ copy_notes_to_docs <- function(note_files) {
     qmd_target <- file.path("docs", basename(qmd_file))
     file.copy(qmd_file, qmd_target, overwrite = TRUE)
 
-    # Copy HTML file if it exists
+    # Check and copy HTML file
     html_source <- file.path(dirname(qmd_file), paste0(base_name, ".html"))
     if (file.exists(html_source)) {
       html_target <- file.path("docs", paste0(base_name, ".html"))
       file.copy(html_source, html_target, overwrite = TRUE)
+    } else {
+      missing_html <- c(missing_html, qmd_file)
     }
 
     # Handle associated files directory
@@ -69,6 +73,16 @@ copy_notes_to_docs <- function(note_files) {
         recursive = TRUE
       )
     }
+  }
+
+  # Display warning for missing HTML files
+  if (length(missing_html) > 0) {
+    warning(
+      "The following files need to be rendered:\n",
+      paste("  *", missing_html, collapse = "\n"),
+      "\nPlease render these files before publishing.",
+      call. = FALSE
+    )
   }
 }
 
@@ -117,7 +131,7 @@ generate_index <- function() {
       index_content <- c(
         index_content,
         sprintf("\n### Clase %d: %s", pres$class_num, pres$title),
-        sprintf("* [Presentación](presentaciones/%s)", html_file)
+        sprintf("* [%s](presentaciones/%s)", pres$title, html_file)
       )
     }
 
@@ -128,7 +142,7 @@ generate_index <- function() {
     if (length(notes) > 0) {
       note_links <- map_chr(notes, function(note) {
         note_html <- gsub("\\.qmd$", ".html", basename(note$file_path))
-        sprintf("* [Notas](%s)", note_html)
+        sprintf("* [%s](%s)", note$title, note_html)
       })
       index_content <- c(index_content, note_links)
     }

@@ -47,7 +47,7 @@ my_data |>
   )
 ```
 
-### Distribucion de la variable sexo 
+### Distribucion de la variable sexo
 
 ```{r}
 table(my_data$sexo)
@@ -77,7 +77,7 @@ my_data$salario |>
   hist()
 ```
 
-## Con ggplot  
+## Con ggplot
 
 ```{r}
 library(ggplot2)
