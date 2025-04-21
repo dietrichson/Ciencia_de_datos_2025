@@ -1,0 +1,15 @@
+---
+title: "Tarea de prueba"
+author: "Aleksander Dietrichson"
+format: html
+editor: visual
+---
+
+## Tarea de la clase 2
+
+Esta es un ejemplo de tarea para entregar.\
+Acá lo que voy a hacer es simplemente sumar dos numeros con código.
+
+```{r}
+2+2
+```
