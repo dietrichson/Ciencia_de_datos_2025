@@ -1,0 +1,15 @@
+---
+title: "Documento de prueba"
+format: html
+editor: visual
+---
+
+## Analisis de prueba 
+
+```{r}
+# Script de prueba 
+edad<- c(23, 24, 25, 39, 21)
+print (mean(edad))
+
+
+```
