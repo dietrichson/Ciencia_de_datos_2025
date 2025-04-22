@@ -1,0 +1,106 @@
+---
+title: "Notas de la clase 2025-04-21"
+author: "Aleksander Dietrichson"
+date: 2025-04-21
+format: html
+editor: visual
+---
+
+## Datos
+
+Los datos son de indec, la muestra permanente de hogares.
+
+```{r}
+#| include: false
+library(dplyr)
+library(ggplot2)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+my_data <- datos_crudos |>  
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer"))
+```
+
+## Hipótesis
+
+$H_0$: No existe diferencia entre el salario de los hombres y el de las mujeres
+
+$H_A$: Los hombres ganan más que las mujeres.
+
+## Tabla con dplyr
+
+```{r}
+my_data %>% 
+  filter(salario > 0) %>% 
+  group_by(sexo) %>% 
+  summarize(
+    salario_medio = mean(salario, na.rm = TRUE),
+    salario_mediano = median(salario, na.rm = TRUE)
+  )
+  
+```
+
+## Visualizar
+
+```{r}
+#| echo: false
+my_data %>% 
+  group_by(sexo ) %>% 
+  summarize(
+    salario = mean(salario, na.rm=TRUE)
+  ) %>% 
+  ungroup() %>% 
+  ggplot(aes(sexo,salario, fill = sexo))+
+  geom_col()
+```
+
+```{r}
+my_data %>% 
+  ggplot(aes(salario, color = sexo))+
+  geom_density()+
+  scale_x_log10()
+```
+
+```{r}
+data_mujeres <- my_data %>% 
+  filter( sexo == "Mujer") %>% 
+  filter(salario > 0)
+
+data_hombres <- my_data %>% 
+  filter( sexo != "Mujer") %>% 
+  filter(salario > 0)
+
+```
+
+## Realizar test de t
+
+```{r}
+t.test(data_hombres$salario, data_mujeres$salario)
+```
+
+Basado en estos resultados rechazamos la hipótesis nula y nos quedamos con la alternativa que es que los hombres ganan más que las mujeres en Argentina.
+
+## Tarea
+
+-   Usar los datos del indec
+
+-   Eligir dos a cinco variables
+
+-   Formular hipotesis (nula y una o dos alternativas)
+
+    -   Con notación formal o en prosa
+
+-   Visualizar los datos
+
+-   (Dejar pendiente test estadistico - lo vemos en la clase).
+
+## Lecturas
+
+-   Capitulo 9: Test de Chi-Cuadrado

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,10 +29,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="index_files/libs/bootstrap/bootstrap-1d04683851b5742726a4b8f03a55ba86.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -76,7 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="clase-2-admin-y-r">Clase 2: Admin y R</h3>
 <ul>
 <li><a href="presentaciones/2-sincronizar-repositorios-primer-codigo-y-analysis.html">Admin y R</a></li>
-<li><a href="notas-de-la-clase-2025-04-07.html">Presentación</a></li>
 <li><a href="Primer-analysis.html">Primer análisis Indec</a></li>
 </ul>
 </section>
@@ -91,6 +90,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="clase-4-método-científico.-manipulación-de-datos.">Clase 4: Método científico. Manipulación de datos.</h3>
 <ul>
 <li><a href="presentaciones/4-metodo-científico.html">Método científico. Manipulación de datos.</a></li>
+<li><a href="notas-de-la-clase-2025-04-21.html">Notas de la clase 2025-04-21</a></li>
 </ul>
 </section>
 </section>
@@ -179,8 +179,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -291,7 +289,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

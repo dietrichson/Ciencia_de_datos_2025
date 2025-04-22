@@ -15,7 +15,6 @@ format:
 
 ### Clase 2: Admin y R
 * [Admin y R](presentaciones/2-sincronizar-repositorios-primer-codigo-y-analysis.html)
-* [Presentación](notas-de-la-clase-2025-04-07.html)
 * [Primer análisis Indec](Primer-analysis.html)
 
 ### Clase 3: Revisión de la teoría
@@ -24,3 +23,4 @@ format:
 
 ### Clase 4: Método científico. Manipulación de datos.
 * [Método científico. Manipulación de datos.](presentaciones/4-metodo-científico.html)
+* [Notas de la clase 2025-04-21](notas-de-la-clase-2025-04-21.html)
