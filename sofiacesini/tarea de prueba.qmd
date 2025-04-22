@@ -1,0 +1,17 @@
+---
+title: "tarea de prueba"
+author: "Sofia Cesini"
+format: html
+editor: visual
+---
+
+## Tarea de la clase 2 
+
+Tarea de ejemplo
+
+Suma de dos numero con codigo
+
+```{r}
+2+2
+
+```
