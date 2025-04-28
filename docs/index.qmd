@@ -24,3 +24,5 @@ format:
 ### Clase 4: Método científico. Manipulación de datos.
 * [Método científico. Manipulación de datos.](presentaciones/4-metodo-científico.html)
 * [Notas de la clase 2025-04-21](notas-de-la-clase-2025-04-21.html)
+* [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28-II.html)
+* [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28.html)

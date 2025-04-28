@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aleksander Dietrichson">
+<meta name="dcterms.date" content="2025-04-28">
 
-<title>Seminario de Ciencia de Datos</title>
+<title>Notas de la clase 2025-04-28</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,19 +25,47 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-1d04683851b5742726a4b8f03a55ba86.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="notas-de-la-clase-2025-04-28_files/libs/clipboard/clipboard.min.js"></script>
+<script src="notas-de-la-clase-2025-04-28_files/libs/quarto-html/quarto.js"></script>
+<script src="notas-de-la-clase-2025-04-28_files/libs/quarto-html/popper.min.js"></script>
+<script src="notas-de-la-clase-2025-04-28_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="notas-de-la-clase-2025-04-28_files/libs/quarto-html/anchor.min.js"></script>
+<link href="notas-de-la-clase-2025-04-28_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="notas-de-la-clase-2025-04-28_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="notas-de-la-clase-2025-04-28_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="notas-de-la-clase-2025-04-28_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="notas-de-la-clase-2025-04-28_files/libs/bootstrap/bootstrap-3dc9094430be18c8a5aac800159ef30a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="fullcontent">
@@ -46,14 +76,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Seminario de Ciencia de Datos</h1>
+<h1 class="title">Notas de la clase 2025-04-28</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aleksander Dietrichson </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -63,38 +105,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="presentaciones-y-notas" class="level2">
-<h2 class="anchored" data-anchor-id="presentaciones-y-notas">Presentaciones y Notas</h2>
-<section id="clase-1-arranque" class="level3">
-<h3 class="anchored" data-anchor-id="clase-1-arranque">Clase 1: Arranque</h3>
-<ul>
-<li><a href="presentaciones/1-inicio-y-setup.html">Arranque</a></li>
-<li><a href="presentacion.html">Presentación Aleksander Dietrichson</a></li>
-</ul>
+<section id="datos" class="level2">
+<h2 class="anchored" data-anchor-id="datos">Datos</h2>
+<p>Analizamos los datos del indec, la encuesta permanente de hogares. Usando dos variables “sexo” y “estado civil”. Estado civil fue simplificado a dos niveles, represendando los que estan en pareja (casados o no) y los que están solos.</p>
 </section>
-<section id="clase-2-admin-y-r" class="level3">
-<h3 class="anchored" data-anchor-id="clase-2-admin-y-r">Clase 2: Admin y R</h3>
-<ul>
-<li><a href="presentaciones/2-sincronizar-repositorios-primer-codigo-y-analysis.html">Admin y R</a></li>
-<li><a href="Primer-analysis.html">Primer análisis Indec</a></li>
-</ul>
+<section id="forumulación-de-hipótesis" class="level2">
+<h2 class="anchored" data-anchor-id="forumulación-de-hipótesis">Forumulación de hipótesis</h2>
+<p><span class="math inline">\(H_0\)</span>: El numero de solteros es igual entre hombres y mujeres</p>
+<p><span class="math inline">\(H_1\)</span>: Hay más solas que solos</p>
+<p><span class="math inline">\(H_2\)</span>: Hay más solos que solas</p>
 </section>
-<section id="clase-3-revisión-de-la-teoría" class="level3">
-<h3 class="anchored" data-anchor-id="clase-3-revisión-de-la-teoría">Clase 3: Revisión de la teoría</h3>
-<ul>
-<li><a href="presentaciones/3-centralizacion-y-dispersión.html">Revisión de la teoría</a></li>
-<li><a href="notas-de-la-clase-2025-04-14.html">Notas de la clase 2025-04-14</a></li>
-</ul>
-</section>
-<section id="clase-4-método-científico.-manipulación-de-datos." class="level3">
-<h3 class="anchored" data-anchor-id="clase-4-método-científico.-manipulación-de-datos.">Clase 4: Método científico. Manipulación de datos.</h3>
-<ul>
-<li><a href="presentaciones/4-metodo-científico.html">Método científico. Manipulación de datos.</a></li>
-<li><a href="notas-de-la-clase-2025-04-21.html">Notas de la clase 2025-04-21</a></li>
-<li><a href="notas-de-la-clase-2025-04-28-II.html">Notas de la clase 2025-04-28</a></li>
-<li><a href="notas-de-la-clase-2025-04-28.html">Notas de la clase 2025-04-28</a></li>
-</ul>
-</section>
+<section id="distribución-de-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-de-los-datos">Distribución de los datos</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">En pareja</th>
+<th style="text-align: right;">Solo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hombre</td>
+<td style="text-align: right;">8910</td>
+<td style="text-align: right;">13874</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mujer</td>
+<td style="text-align: right;">8987</td>
+<td style="text-align: right;">15793</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Observamos una leve asimetría en los datos.</p>
 </section>
 
 </main>

@@ -1,0 +1,63 @@
+---
+title: "Notas de la clase 2025-04-28"
+date: 2025-04-28
+author: "Aleksander Dietrichson"
+format: html
+editor: visual
+---
+
+```{r}
+#| include: false
+library(dplyr)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+my_data <- datos_crudos |>  
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06,
+    estado_civil = CH07
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer")) |>
+  mutate(estado_civil = ifelse(estado_civil < 3, "En pareja", "Solo"))
+```
+
+## Datos
+
+Analizamos los datos del indec, la encuesta permanente de hogares. Usando dos variables "sexo" y "estado civil". Estado civil fue simplificado a dos niveles, represendando los que estan en pareja (casados o no) y los que están solos.
+
+## Forumulación de hipótesis
+
+$H_0$: El numero de solteros es igual entre hombres y mujeres
+
+$H_1$: Hay más solas que solos
+
+$H_2$: Hay más solos que solas
+
+## Distribución de los datos
+
+```{r}
+#| echo: false
+table(my_data$sexo, my_data$estado_civil) %>% 
+  knitr::kable()
+```
+
+Observamos una asimetría en los datos.
+
+## Test estadístico
+
+Realizamos un test usando chi-cuadrado ( $\chi^2$)
+
+```{r}
+table(my_data$sexo, my_data$estado_civil) |>
+  chisq.test()
+```
+
+Observamos un valor p muy cerca de 0 (0.000000000182) con lo cual tenemos significanza estadística.
+
+## Conclusión
+
+Basado en el test estadístico rechazamos la hipótesis nula, y concluimos que hay más mujeres que hombre con estado civil "solo".

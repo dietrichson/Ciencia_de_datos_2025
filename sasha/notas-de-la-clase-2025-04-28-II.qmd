@@ -1,0 +1,52 @@
+---
+title: "Notas de la clase 2025-04-28"
+date: 2025-04-28
+author: "Aleksander Dietrichson"
+format: html
+editor: visual
+---
+
+```{r}
+#| include: false
+library(dplyr)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+my_data <- datos_crudos |>  
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06,
+    estado_civil = CH07
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer")) |>
+  mutate(estado_civil = ifelse(estado_civil < 3, "En pareja", "Solo"))
+```
+
+## 
+
+```{r}
+my_data$sexo |> table()
+```
+
+```{r}
+my_data$sexo |> table()/nrow(my_data)
+```
+
+## Tarea para la próxima 
+
+-   Eligir dos variables de los datos del indec
+
+-   Dicotomizarlas
+
+-   Formular hipótesis
+
+-   Realizar test de $\chi^2$
+
+-   Interpretar los resultados
+
+## Lecturas para la próxima
+
+-   Capítulo 5 del libro de texto.
