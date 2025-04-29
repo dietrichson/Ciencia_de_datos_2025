@@ -1,6 +1,7 @@
 ---
 title: "La prueba de $\\chi^2$"
 author: "Aleksander Dietrichson, PhD"
+date: 2025-04-28
 format: 
   revealjs: 
     code-line-numbers: false

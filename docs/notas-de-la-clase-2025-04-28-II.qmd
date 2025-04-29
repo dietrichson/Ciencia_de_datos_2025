@@ -35,7 +35,7 @@ my_data$sexo |> table()
 my_data$sexo |> table()/nrow(my_data)
 ```
 
-## Tarea para la próxima 
+## Tarea para la próxima
 
 -   Eligir dos variables de los datos del indec
 

@@ -34,6 +34,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap-1d04683851b5742726a4b8f03a55ba86.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -91,6 +120,12 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="presentaciones/4-metodo-científico.html">Método científico. Manipulación de datos.</a></li>
 <li><a href="notas-de-la-clase-2025-04-21.html">Notas de la clase 2025-04-21</a></li>
+</ul>
+</section>
+<section id="clase-5-la-prueba-de-chi2" class="level3">
+<h3 class="anchored" data-anchor-id="clase-5-la-prueba-de-chi2">Clase 5: La prueba de <span class="math inline">\(\chi^2\)</span></h3>
+<ul>
+<li><a href="presentaciones/5-chi-cuadrado.html">La prueba de <span class="math inline">\(\chi^2\)</span></a></li>
 <li><a href="notas-de-la-clase-2025-04-28-II.html">Notas de la clase 2025-04-28</a></li>
 <li><a href="notas-de-la-clase-2025-04-28.html">Notas de la clase 2025-04-28</a></li>
 </ul>

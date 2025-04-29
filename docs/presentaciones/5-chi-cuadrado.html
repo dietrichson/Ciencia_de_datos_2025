@@ -10,6 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Aleksander Dietrichson, PhD">
+  <meta name="dcterms.date" content="2025-04-28">
   <title>La prueba de \chi^2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -204,6 +205,7 @@ Aleksander Dietrichson, PhD
 </div>
 </div>
 
+  <p class="date">2025-04-28</p>
 </section>
 <section id="agenda-de-hoy" class="slide level2">
 <h2>Agenda de hoy</h2>
@@ -412,14 +414,14 @@ A\times D \over{A+B+C+D}
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>   Pais pref
-1   Arg Mate
-2   Arg Mate
+1   Arg Cafe
+2   Arg Cafe
 3   Arg Cafe
-4   Arg Mate
-5   Arg Cafe
-6   Arg Cafe
+4   Arg Cafe
+5   Arg Mate
+6   Arg Mate
 7   Arg Cafe
-8   Arg Mate
+8   Arg Cafe
 9   Arg Mate
 10  Arg Mate</code></pre>
 </div>
@@ -441,8 +443,8 @@ A\times D \over{A+B+C+D}
 <div class="cell-output cell-output-stdout">
 <pre><code>     
       Cafe Mate
-  Arg   28   22
-  ROU   11    9</code></pre>
+  Arg   24   26
+  ROU    6   14</code></pre>
 </div>
 </div>
 <ul>
@@ -462,8 +464,8 @@ A\times D \over{A+B+C+D}
 # Groups:   Pais [2]
   Pais   Cafe  Mate
   &lt;chr&gt; &lt;int&gt; &lt;int&gt;
-1 Arg      28    22
-2 ROU      11     9</code></pre>
+1 Arg      24    26
+2 ROU       6    14</code></pre>
 </div>
 </div>
 </section>
@@ -482,7 +484,7 @@ A\times D \over{A+B+C+D}
     Pearson's Chi-squared test with Yates' continuity correction
 
 data:  table(my_data$Pais, my_data$pref)
-X-squared = 0, df = 1, p-value = 1</code></pre>
+X-squared = 1.2265, df = 1, p-value = 0.2681</code></pre>
 </div>
 </div>
 <p>Con estos datos <strong>NO</strong> logramos refutar la hipótesis nula.</p>
