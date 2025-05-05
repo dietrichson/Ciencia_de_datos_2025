@@ -1,0 +1,192 @@
+---
+title: "Notas de la clase 2025-05-05"
+format: html
+editor: visual
+---
+
+## Datos del 2024
+
+```{r}
+datos_indec <- readRDS("/cloud/project/data/datos_indec.rds")
+filename <- "../data/usu_hogar_T324.txt"
+file.exists(filename)
+datos2 <- readr::read_delim(filename, delim = ";")
+```
+
+## Comparación en crudo:
+
+```{r}
+ingresos2024 <- datos2$ITF
+ingresos2023 <- datos_indec$ITF
+```
+
+```{r}
+mean(ingresos2023)
+mean(ingresos2024)
+```
+
+## Visualizar
+
+```{r}
+hist(ingresos2023)
+```
+
+```{r}
+hist(ingresos2024)
+```
+
+```{r}
+my_data <- data.frame(
+  ingreso = c(ingresos2023,ingresos2024),
+  year = c(rep("2023", length(ingresos2023)),
+            rep("2024", length(ingresos2024))
+  )   
+)
+
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+my_data %>% 
+  filter(ingreso > 0) %>% 
+  ggplot(aes(ingreso, fill = year))+
+  geom_histogram(alpha = .5)+
+  scale_x_log10()
+
+```
+
+### Pregunta
+
+-   Hay mas observaciones del 23 o del 24
+
+    ```{r}
+    my_data %>% 
+      group_by(year) %>% 
+      count()
+    ```
+
+```{r}
+my_data_normalizada <- my_data %>% 
+  group_by(year) %>% 
+  mutate(ingreso_normalizado = scale(ingreso))
+```
+
+Verificar el resultado
+
+```{r}
+my_data_normalizada %>% 
+  filter(year == 2023) %>% 
+  pull(ingreso_normalizado) %>% 
+  mean()
+
+my_data_normalizada %>% 
+  filter(year == "2024") %>% 
+  pull(ingreso_normalizado) %>% 
+  mean()
+```
+
+```{r}
+my_data_normalizada$ingreso_normalizado %>% sd()
+```
+
+### Hacer la transformación "a mano"
+
+```{r}
+my_data3 <- data.frame(
+  ingreso = c(scale(ingresos2023),scale(ingresos2024)),
+  year = c(rep("2023", length(ingresos2023)),
+            rep("2024", length(ingresos2024))
+  )   
+)
+```
+
+```{r}
+my_data_normalizada %>% 
+  ggplot(aes(ingreso_normalizado, fill=year, color = year))+
+  geom_histogram()+
+  scale_x_log10()
+```
+
+```{r}
+my_data_normalizada %>% 
+  ggplot(aes(ingreso_normalizado, color = year))+
+  geom_density(alpha = .5)+
+  scale_x_log10()
+```
+
+## Error estándar
+
+```{r}
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+my_data4 <- readr::read_delim(filename, delim = ";")
+edad <- my_data4$CH06
+```
+
+```{r}
+mean(edad)
+```
+
+```{r}
+N <- length(edad)
+
+SE <- (sd(edad)/sqrt(N))
+
+SE
+```
+
+```{r}
+conf95 <- c(mean(edad)-SE*1.96, mean(edad) + SE*1.96)
+```
+
+```{r}
+conf95
+```
+
+```{r}
+edad2 <- sample(edad, 100)
+```
+
+```{r}
+mean(edad2)
+```
+
+```{r}
+N <- length(edad2)
+
+SE <- (sd(edad2)/sqrt(N))
+
+SE
+
+conf95 <- c(mean(edad2)-SE*1.96, mean(edad2) + SE*1.96)
+```
+
+```{r}
+conf95
+```
+
+## Hemos visto
+
+-   Visualizacion de distribuciones
+
+-   error estandar y como calcularlo
+
+-   Probabilidad
+
+## Tarea para la próxima
+
+-   Eligir una variable (que no sea edad) de los datos del indec
+
+-   Visualizarla
+
+-   Sacar promedio
+
+-   Calcular el nivel de confianza a 95%
+
+## Lecturas
+
+-   Capítulo 4
+
+-   Capítulo 7
