@@ -29,3 +29,4 @@ format:
 * [La prueba de $\chi^2$](presentaciones/5-chi-cuadrado.html)
 * [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28-II.html)
 * [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28.html)
+* [Notas de la clase 2025-05-05](notas-de-la-clase-2025-05-05.html)
