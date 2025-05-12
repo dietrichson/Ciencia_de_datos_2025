@@ -1,0 +1,134 @@
+---
+title: "Notas de la clase 2025-05-12"
+date: 2025-05-12
+format: html
+editor: visual
+---
+
+## Datos
+
+Los datos corresponden al tercer cuatrimestre del 2024. Son de la encuesta permanente de hogares del INDEC.
+
+```{r}
+# datos_indec <- readRDS("/cloud/project/data/datos_indec.rds")
+library(dplyr)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+my_data <- readr::read_delim(filename, delim = ";")
+my_data <- my_data |> 
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer"))
+
+
+```
+
+## Ejemplo de funciones
+
+```{r}
+a <- 1
+b <- c(1,2,3,4,5)
+b2 <- c("Uno", "dos", "tres")
+
+add <- function(numero1, numero2){
+  numero1 + numero2
+}
+
+add(1,1)
+add(1000, 1000)
+
+```
+
+### Nuestra función de error estandar
+
+```{r}
+
+
+error_estandar <- function(mi_variable){
+ N <- length(mi_variable)
+ SE <- (sd(mi_variable)/sqrt(N))
+ SE 
+}
+
+
+```
+
+### Probarla
+
+```{r}
+error_estandar(my_data$CH06)
+```
+
+## Ejemplo de test de T
+
+```{r}
+edadHombre <- my_data %>% 
+  filter(sexo == "Hombre") %>% 
+  pull(edad)
+edadMujer = my_data %>% 
+  filter(sexo == "Mujer") %>% 
+  pull(edad)
+
+```
+
+### Test de T
+
+$$
+H_0: \mu_m = \mu_h \\
+H_1: \mu_m < \mu_h \\
+H_2: \mu_m > \mu_h \\
+$$
+
+```{r}
+t.test(edadHombre,edadMujer)
+```
+
+```{r}
+t.test(edadMujer,edadHombre)
+```
+
+## Test de T
+
+```{r}
+salarioHombre <- my_data %>% 
+  filter(sexo == "Hombre") %>% 
+  pull(salario)
+salarioMujer = my_data %>% 
+  filter(sexo == "Mujer") %>% 
+  pull(salario
+       
+       )
+```
+
+```{r}
+var.test(salarioHombre,salarioMujer)
+```
+
+Concluimos que no tienen varianza igual. Entonces no corresponde test de T
+
+### Wilcox o test U de Mann-Whitney
+
+```{r}
+wilcox.test(salarioHombre,salarioMujer)
+```
+
+## Tareas para la próxima
+
+### Lecturas:
+
+-   Capítulo 8
+
+### Tarea
+
+-   Eligir otra variable (no sexo) dicotómica.
+
+-   Usar Test de T o U de Mann-Whitney según corresponda para deternimar si existe diferencias en
+
+    -   Salario
+
+    -   Edad
