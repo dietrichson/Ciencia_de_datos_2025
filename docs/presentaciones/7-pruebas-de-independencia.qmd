@@ -1,6 +1,7 @@
 ---
 title: "Pruebas de independencia"
 author: "Aleksander Dietrichson, PhD"
+date: 2025-05-12
 format: 
   revealjs: 
     code-line-numbers: false
@@ -24,13 +25,13 @@ set.seed(98)
 
 ## Agenda de hoy
 
--   Prueba the T de Student
+-   Test de T de Student
 
--   Prueba de U de Mann-Whitney
+-   Test de U de Mann-Whitney
 
--   Nuevos datos
+-   Datos nuevos
 
--   Revisión de las tares
+-   Revisión de las tareas
 
 ## Prueba de T de Student
 
@@ -84,7 +85,7 @@ $$
 {\sigma²_1\over{\sigma²_2}} = 1
 $$
 
--   Si las varianzas de las dos muestras son iguales su ration debe ser 1.
+-   Si las varianzas de las dos muestras son iguales su ratio debe ser 1.
 
 ## ¿Tienen la misma varianza?
 
@@ -165,27 +166,14 @@ Rechazamos la hipótesis nula y nos quedamos con la hipotesis alternativa de una
 
 Si R tira una `warning` la vamos a ignorar por ahora (hay otro paquete que podemos usar más adelante para tener un valor p exacto).
 
-## Datos nuevos
+## Datos nuevos del INDEC
 
-Hay datos «frescos» del indec. Son del cuarto trimestre de 2023.
+Hay datos «frescos» del indec. Son del cuarto trimestre de 2024.
 
-Vamos a acceder a la encuesta *individual* ya que tiene algunas variables adicionales que pueden ser interesantes:
+Incorporaron nuevas variables sobre:
 
--   Sexo (genero)
+-   informalidad laboral
 
--   Nivel educativo
+-   estrategias del hogar
 
--   Escolaridad
-
--   etc...
-
-## Datos nuevos ETL
-
-```{r}
-#| eval: false
-# ETL para procesar datos del indec
-library(tidyverse)
-my_data <- readr::read_delim("./data/usu_individual_T423.txt",
-                             delim = ";", guess_max = 10000)
-readr::write_rds(my_data, file = "./data/usu_individual_T423.rds")
-```
+-   ingresos no laborales

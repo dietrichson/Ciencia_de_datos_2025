@@ -30,3 +30,6 @@ format:
 * [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28-II.html)
 * [Notas de la clase 2025-04-28](notas-de-la-clase-2025-04-28.html)
 * [Notas de la clase 2025-05-05](notas-de-la-clase-2025-05-05.html)
+
+### Clase 7: Pruebas de independencia
+* [Pruebas de independencia](presentaciones/7-pruebas-de-independencia.html)
