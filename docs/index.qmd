@@ -34,3 +34,6 @@ format:
 ### Clase 7: Pruebas de independencia
 * [Pruebas de independencia](presentaciones/7-pruebas-de-independencia.html)
 * [Notas de la clase 2025-05-12](notas-de-la-clase-2025-05-12.html)
+
+### Clase 8: Tests de independencia II
+* [Tests de independencia II](presentaciones/8-pruebas-de-independencia-2.html)

@@ -1,6 +1,7 @@
 ---
-title: "Pruebas de independencia II"
+title: "Tests de independencia II"
 subtitle: "Muestras pareadas"
+date: 2025-05-19
 author: "Aleksander Dietrichson, PhD"
 format: 
   revealjs: 
@@ -25,7 +26,7 @@ set.seed(98)
 
 ## Agenda de hoy
 
--   Prueba the T de Student para muestras pareadas
+-   Test the T de Student para muestras pareadas
 
 -   Alternativas no-paramétricas
 
@@ -43,7 +44,7 @@ set.seed(98)
 
 -   Revisión de las tares
 
-## Prueba de T de Student
+## Test de T de Student
 
 Si las muestras son dependientes también hay un test de t de student.
 
