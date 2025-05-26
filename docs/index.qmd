@@ -37,3 +37,7 @@ format:
 
 ### Clase 8: Tests de independencia II
 * [Tests de independencia II](presentaciones/8-pruebas-de-independencia-2.html)
+* [Notas de la clase 2025-04-21](notas-de-la-clase-2025-05-19.html)
+
+### Clase 9: Modelos Estadísticos
+* [Modelos Estadísticos](presentaciones/9-modelos-estadisticos.html)

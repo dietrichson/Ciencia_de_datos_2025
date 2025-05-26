@@ -1,0 +1,62 @@
+---
+title: "Notas de la clase 2025-04-21"
+author: "Aleksander Dietrichson"
+date: 2025-05-19
+lang: "es"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+## Datos
+
+Los datos son de indec, la muestra permanente de hogares.
+
+```{r}
+#| include: false
+library(dplyr)
+library(ggplot2)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+my_data <- datos_crudos |>  
+  transmute(
+    salario = PP08D1, 
+    sexo = CH04,
+    nivel_educativo = NIVEL_ED,
+    edad = CH06
+  ) |>
+  mutate(salario = ifelse(salario<0,NA,salario)) |>
+  mutate(sexo = ifelse(sexo == 1, "Hombre","Mujer"))
+```
+
+Usamos R[@base] para analizar los datos. Leimos el capitulo 8 de [@dietrichson2024].
+
+```{r}
+#| label: fig-random
+#| fig-cap: "Una visualización Random"
+#| echo: false
+plot(rnorm(1000),rnorm(1000))
+```
+
+```{r}
+#| label: tbl-tablauno
+#| tbl-cap: "Una Tabla de algo"
+
+my_data %>% 
+  group_by(nivel_educativo) %>% 
+  count() %>% 
+  knitr::kable()
+```
+
+## Tarea
+
+-   Usar los datos uso_hogar_T442.rds y uso_hogar_T443.rds
+
+-   Eligir una variable que no sea el salario
+
+-   Realizar un test de independencia con un test pareado adecuado para el nivel de medición (y N)
+
+## Lecturas
+
+-   El capítulo 10 del libro.

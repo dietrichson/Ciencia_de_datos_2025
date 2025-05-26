@@ -1,6 +1,7 @@
 ---
 title: "Modelos Estadísticos"
 subtitle: "Regresión lineal"
+date: 2025-05-26
 author: "Aleksander Dietrichson, PhD"
 format: 
   revealjs: 
@@ -54,12 +55,12 @@ my_data <- my_data |> select(NIVEL_ED,P21, CH04) |> #<2>
 2.  Selecciono NIVEL_ED = nivel educativo y P21 = ingreso de la actividad principal
 3.  Removemos los ingresos 0 y el nivel educativo de 9, que es un código de «sin datos».
 4.  7 es el código de «sin instrucción» lo pongo en cero para tener una escala de 0 a 7.
+
 ```{r}
 #| include: false
 my_data <- my_data |>   mutate(sexo = ifelse(CH04 == 1, "varón", "mujer"))
 
 ```
-
 
 ## Modelos estadísticos lineales
 
@@ -112,11 +113,9 @@ $$
 
 -   $\beta_2$ que es «sexo»
 
-Fórmula general:
-$$
+Fórmula general: $$
 y \sim \beta_0 + \beta_1 + ... +\beta_n + \epsilon
-$$
-Para un módelo con n variables. 
+$$ Para un módelo con n variables.
 
 ## Modelos estadísticos lineales
 
@@ -127,4 +126,3 @@ my_model <- lm(P21 ~ NIVEL_ED + sexo, data = my_data)
 my_model |> 
   summary()
 ```
-
