@@ -1,0 +1,167 @@
+---
+title: "Notas de la clase 26 de mayo"
+author: "Aleksander Dietrichson, PhD"
+lang: "es"
+date: 2025-05-26
+format: html
+editor: visual
+---
+
+## Datos
+
+Son los datos del indec del tercer trimestre del 2024.
+
+```{r}
+library(tidyverse)
+filename <- "../data/usu_individual_T324.txt"
+file.exists(filename)
+datos_crudos <- readr::read_delim(filename, delim = ";")
+
+my_data <- datos_crudos %>% 
+  select(NIVEL_ED,CH04, P21) %>% 
+  filter(P21>0, NIVEL_ED <9) %>% 
+  mutate(NIVEL_ED = ifelse(NIVEL_ED == 7,0,NIVEL_ED)) %>% 
+  rename(
+    sexo = CH04,
+    ingreso = P21,
+    educacion = NIVEL_ED
+    )
+
+```
+
+## Visualizar las variables
+
+```{r}
+
+my_data %>% 
+  ggplot(aes(educacion,ingreso))+
+  geom_point()+
+  scale_y_log10()+
+  geom_smooth(method = "lm") # lm = linear model
+```
+
+```{r}
+my_data %>% 
+  ggplot(aes(ingreso,educacion))+
+  geom_point()+
+  scale_x_log10()+
+  geom_smooth(method = "lm") # lm = linear model
+```
+
+### Introducir otra variable
+
+```{r}
+my_data %>% 
+  ggplot(aes(educacion,ingreso, color = sexo))+
+  geom_point()+
+  scale_y_log10()+
+  geom_smooth(method = "lm") # lm = linear model
+```
+
+qué pasó acá: R entiende que 1 es un numero y 2 es otro, cuando en realidad son los códigos (1=varón, 2 = mujer).
+
+```{r}
+
+# Transformacion de "sexo" a variable nominal
+
+my_data <- my_data %>% 
+  mutate(
+    sexo = ifelse(sexo == 1, "Varón", "Mujer")
+  )
+
+my_data %>% 
+  ggplot(aes(educacion,ingreso, color = sexo))+
+  geom_point()+
+  scale_y_log10()+
+  geom_smooth(method = "lm") # lm = linear model
+```
+
+## Modelar los datos
+
+$$
+y \sim \beta_0 + \beta_1 ... \beta_n + \epsilon
+$$
+
+En nuestro caso:
+
+$$
+ingreso \sim \beta_{ed} + \beta_{sex} + \epsilon
+$$
+
+```{r}
+my_model <- lm(ingreso ~ educacion + sexo, data = my_data)
+```
+
+### Dos maneras de ver el modelo
+
+```{r}
+my_model # es equivalente a print(my_model)
+```
+
+```{r}
+my_model %>% 
+  summary()
+```
+
+### Un ajuste más
+
+```{r}
+nrow(my_data)
+my_data <- my_data%>% 
+  filter(ingreso > 0)
+```
+
+```{r}
+my_model2 <- lm(ingreso ~ educacion + sexo, data = my_data)
+```
+
+```{r}
+my_model2 %>% 
+  summary()
+```
+
+NOTA: El ajuste ya estaba hecho, por eso no hubo diferencia en los resultados.
+
+```{r}
+datos_nuevos <-
+  data.frame(
+    nombre = c("Juan", "Maria", "Camila", "Jorge"),
+    educacion = c(3,2,5,6),
+    sexo = c("Varón", "Mujer","Mujer","Varón")
+  )
+```
+
+```{r}
+predict(my_model, newdata = datos_nuevos)
+```
+
+## Uso del modelo
+
+-   Descriptivo
+
+-   Inferencial
+
+-   Predictivo
+
+## Tarea
+
+Planificar projecto final
+
+-   Eligir un conjunto de datos (puede ser los datos del Indec)
+
+-   Eligir variables a analizar
+
+-   Formular hipotesis nula y alternativa (si corresponde)
+
+-   Planificar analisis
+
+Opciones de anális:
+
+-   Descriptivo
+
+-   Inferencial
+
+-   o ambos
+
+    \
+    Entregar el plan en formato Quarto o texto.
