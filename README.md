@@ -14,7 +14,7 @@ Bienvenidos! Este repositorio contiene los archivos y códigos del seminario de 
 1.  Abrir una cuenta en github (<https://github.com/>)
 2.  Abrir una cuenta en posit.cloud (<https://posit.cloud/>)
 3.  Asociar la cuenta de github con la de posit
-4.  Hacer «clone» de **este** repositorio (https://github.com/dietrichson/Ciencia_de_datos_2025.git) en una instancia Rstudio de posit.cloud.
+4.  Hacer «clone» de **este** repositorio en una instancia Rstudio de posit.cloud. \\ (url: https://github.com/dietrichson/Ciencia_de_datos_2025.git)
 5.  Enviarme por mail su **usuario de github**. (Luego van a recibir una invitación de colaborar).
 
 ### Recommendaciones específicas de github
