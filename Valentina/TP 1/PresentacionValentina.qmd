@@ -1,0 +1,18 @@
+---
+title: "Presentacion Valentina"
+author: "Valentina"
+format: revealjs
+editor: visual
+---
+
+## Presentación
+
+Hola, soy \@Valentina1312.
+
+Estoy interesada en saber un poco mas sobre la materia para aplicarlo a mi futura profesión.
+
+Actualmente estoy aprendiendo a utilizar la ciencia de datos en la vida cotidiana, soy actriz, hago un taller de pintura y realizo sesiones de kinesiología e hidroterapia.
+
+Estoy buscando colaborar en un proyecto donde pueda aplicar la ciencia de datos y todo lo aprendido en la carrera ,pero aún no logro determinar la tematica ya que estoy a la expectativa de los contenidos de la materia.
+
+Mi familia y amigos me dicen:Valen. Por lo tanto si resulta necesario aplicar ese pronombre en la asignatura estan autorizados -No me considero buena en los asuntos que requieran numeros y tecnología, pero estoy dispuesta a aprender para que sea grato en mi futura profesión como docente.
